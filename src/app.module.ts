@@ -6,18 +6,18 @@ import { MovieModule } from './movie/movie.module';
 import { MovieService } from './movie/movie.service';
 import { TaskService } from './task/task.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { getTypeORMConfig } from './config/typeorm.config';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'root',
-      password: '1234',
-      database: 'nestjs-course',
-      autoLoadEntities: true,
-      synchronize: true,
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: getTypeORMConfig,
+      inject: [ConfigService],
     }),
     TaskModule,
     MovieModule,
