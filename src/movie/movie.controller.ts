@@ -16,10 +16,10 @@ import { MovieService } from './movie.service';
 export class MovieController {
   constructor(private readonly movieService: MovieService) {}
 
-  //   @Get()
-  //   async findAll() {
-  //     return this.movieService.findAll();
-  //   }
+  @Get()
+  async findAll() {
+    return this.movieService.findAll();
+  }
   //   @Get()
   //   findAll(@Query() query: any) {
   //     return `${JSON.stringify(query)}`;
