@@ -8,7 +8,7 @@ import {
 
 @Entity({ name: 'movies' })
 export class MovieEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: number;
 
   @Column()

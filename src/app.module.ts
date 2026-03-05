@@ -3,8 +3,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TaskModule } from './task/task.module';
 import { MovieModule } from './movie/movie.module';
-import { MovieService } from './movie/movie.service';
-import { TaskService } from './task/task.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { getTypeORMConfig } from './config/typeorm.config';
@@ -23,6 +21,6 @@ import { getTypeORMConfig } from './config/typeorm.config';
     MovieModule,
   ],
   controllers: [AppController],
-  providers: [AppService, MovieService, TaskService],
+  providers: [AppService],
 })
 export class AppModule {}

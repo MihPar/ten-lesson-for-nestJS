@@ -8,9 +8,11 @@ import {
   Req,
   Res,
   Param,
+  Put,
 } from '@nestjs/common';
 import type { Request, Response } from 'express';
 import { MovieService } from './movie.service';
+import { CreateMovieDto } from './dto/create.movie.dto';
 
 @Controller('movies')
 export class MovieController {
@@ -19,6 +21,11 @@ export class MovieController {
   @Get()
   async findAll() {
     return this.movieService.findAll();
+  }
+
+  @Post('createDto')
+  async createDto(@Body() dto: CreateMovieDto) {
+    return this.movieService.createDto(dto);
   }
   //   @Get()
   //   findAll(@Query() query: any) {
