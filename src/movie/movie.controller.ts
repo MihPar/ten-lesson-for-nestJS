@@ -32,6 +32,11 @@ export class MovieController {
   //     return `${JSON.stringify(query)}`;
   //   }
 
+  @Get(':id')
+  async findById(@Param('id') id: string) {
+    return { id };
+  }
+
   //   @Get(':id/param')
   //   getParam(@Param('id') id: string) {
   //     return { id };
