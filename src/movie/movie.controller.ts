@@ -9,6 +9,7 @@ import {
   Res,
   Param,
   Put,
+  Ip,
 } from '@nestjs/common';
 import type { Request, Response } from 'express';
 import { MovieService } from './movie.service';
@@ -68,8 +69,8 @@ export class MovieController {
   //     };
   //   }
 
-  //   @Get('response')
-  //   getResponseDetails(@Res() res: Response) {
-  //     return res.status(201).json({ message: 'Hello' });
-  //   }
+  @Get('response')
+  getResponseDetails(@Res() res: Response) {
+    return res.status(201).json({ message: 'Hello' });
+  }
 }
