@@ -38,10 +38,10 @@ export class MovieController {
     return { id };
   }
 
-  //   @Get(':id/param')
-  //   getParam(@Param('id') id: string) {
-  //     return { id };
-  //   }
+  @Get(':id/param')
+  getParam(@Param('id') id: string) {
+    return { id };
+  }
 
   //   @Post()
   //   create(@Body() body: { title: string; ganre: string }) {
