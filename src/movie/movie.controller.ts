@@ -43,10 +43,10 @@ export class MovieController {
     return { id };
   }
 
-  //   @Post()
-  //   create(@Body() body: { title: string; ganre: string }) {
-  //     return body;
-  //   }
+  @Post()
+  create(@Body() body: { title: string; ganre: string }) {
+    return body;
+  }
 
   //   @Get('headers')
   //   getHeaders(@Headers() headers: any) {
